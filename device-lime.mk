@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-PRODUCT_HARDWARE := lime
+PRODUCT_HARDWARE := lime,lemon,pomelo,juice,chime
 
 # Include common platform configs
 include device/xiaomi/chime/device.mk
