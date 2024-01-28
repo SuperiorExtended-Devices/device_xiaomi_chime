@@ -2,7 +2,7 @@
 ro.af.client_heap_size_kbyte=7168
 
 # Camera
-persist.vendor.camera.privapp.list=com.android.camera,org.codeaurora.snapcam
+#persist.vendor.camera.privapp.list=com.android.camera,org.codeaurora.snapcam
 
 # Charger
 ro.charger.disable_init_blank=true
@@ -33,6 +33,9 @@ persist.sys.fuse.passthrough.enable=true
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=0
 persist.dbg.wfc_avail_ovr=1
+
+# Maintainer
+ro.spos.maintainer=pawelik001
 
 # Media
 debug.stagefright.ccodec=1

@@ -10,6 +10,7 @@ DEVICE_PATH := device/xiaomi/chime/lime
 include device/xiaomi/chime/BoardConfig.mk
 
 # Assert
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info-lime.txt
 TARGET_OTA_ASSERT_DEVICE := lime,lemon,pomelo,chime,juice
 
 # Kernel - Prebuilt images

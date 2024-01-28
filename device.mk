@@ -13,6 +13,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/chime/chime-vendor.mk)
 
+# Camera
+$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
+
 # Inherit several Android Go Configurations(Beneficial for everyone, even on non-Go devices)
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
@@ -272,6 +275,11 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
 
+# Miui Cam
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.miui.notch=1 \
+    ro.product.mod_device=chime
+
 # Network
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
@@ -323,7 +331,7 @@ PRODUCT_PACKAGES += \
     TelephonyResChime \
     WifiResCommon
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-superior
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
